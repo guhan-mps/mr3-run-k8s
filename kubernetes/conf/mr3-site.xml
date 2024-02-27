@@ -169,22 +169,22 @@
 
 <property>
   <name>mr3.am.resource.memory.mb</name>
-  <value>16384</value>
+  <value>2048</value>
 </property>
 
 <property>
   <name>mr3.am.resource.cpu.cores</name>
-  <value>4</value>
+  <value>2</value>
 </property>
 
 <property>
   <name>mr3.am.local.resourcescheduler.max.memory.mb</name>
-  <value>8192</value>
+  <value>2048</value>
 </property>
 
 <property>
   <name>mr3.am.local.resourcescheduler.max.cpu.cores</name>
-  <value>8</value>
+  <value>2</value>
 </property>
 
 <property>
@@ -387,7 +387,7 @@
 <!-- set to /ephemeral1 with instance storage mounted on /ephemeral1 for worker Pod on AWS EKS -->
 <property>
   <name>mr3.k8s.pod.worker.hostpaths</name>
-  <value>/data1/k8s,/data2/k8s,/data3/k8s,/data4/k8s,/data5/k8s,/data6/k8s</value>
+  <value>/tmp</value>
 </property>
 
 <property>

@@ -1,0 +1,44 @@
+dir:
+  persistentVolumeClaim: ""
+workDir:
+  create: false
+name:
+  persistentVolume: ""
+  persistentVolumeClaim: ""
+metastore:
+  databaseHost: postgres-rbac
+  databaseName: hive3mr3
+  warehouseDir: s3a://
+  dbType: postgres
+  mountLib: false
+  resources:
+    requests:
+      cpu: 2
+      memory: 1Gi
+    limits:
+      cpu: 2
+      memory: 1Gi
+  heapSize: 1000
+  initSchema: true
+
+create:
+  hive: false
+hive:
+  port: 9852
+  httpport: 10001
+  resources:
+    requests:
+      cpu: 2
+      memory: 1Gi
+    limits:
+      cpu: 2
+      memory: 1Gi
+  heapSize: 1000
+
+docker:
+  image: mr3project/hive3:1.9
+  containerWorkerImage: mr3project/hive3:1.9
+
+postgresql:
+  postgresPassword: abc
+  postgresUser: user

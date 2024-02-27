@@ -232,7 +232,7 @@ LOG_LEVEL=INFO
 HIVE_METASTORE_HEAPSIZE=16384
 
 # Type of Metastore database which is used when running 'schematool -initSchema'
-HIVE_METASTORE_DB_TYPE=mysql
+HIVE_METASTORE_DB_TYPE=postgres
 
 #
 # For running HiveCLI 

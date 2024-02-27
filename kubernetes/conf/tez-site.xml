@@ -37,7 +37,7 @@
 
 <property>
   <name>tez.runtime.io.sort.mb</name>
-  <value>1040</value>
+  <value>200</value>
 </property>
 
 <property>

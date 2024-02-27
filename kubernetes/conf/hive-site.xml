@@ -17,7 +17,7 @@
 
 <property>
   <name>hive.compactor.initiator.on</name>
-  <value>true</value>
+  <value>false</value>
 </property>
 
 <property>
@@ -153,11 +153,11 @@
  -->
 <property>
   <name>hive.metastore.pre.event.listeners</name>
-  <value>org.apache.hadoop.hive.ql.security.authorization.AuthorizationPreEventListener</value>
+  <value></value>
 </property>
 <property>
   <name>metastore.pre.event.listeners</name>
-  <value>org.apache.hadoop.hive.ql.security.authorization.AuthorizationPreEventListener</value>
+  <value></value>
 </property>
 
 <property>
@@ -304,14 +304,14 @@
   <name>hive.security.authenticator.manager</name>
   <!-- <value>org.apache.hadoop.hive.ql.security.HadoopDefaultAuthenticator</value> -->
   <!-- <value>org.apache.hadoop.hive.ql.security.ProxyUserAuthenticator</value> -->
-  <value>org.apache.hadoop.hive.ql.security.SessionStateUserAuthenticator</value>
+  <value>org.apache.hadoop.hive.ql.security.HadoopDefaultAuthenticator</value>
 </property>
 
 <property>
   <name>hive.security.authorization.manager</name>
   <!-- <value>org.apache.hadoop.hive.ql.security.authorization.plugin.sqlstd.SQLStdConfOnlyAuthorizerFactory</value> -->
   <!-- <value>org.apache.hadoop.hive.ql.security.authorization.plugin.sqlstd.SQLStdHiveAuthorizerFactory</value> -->
-  <value>org.apache.ranger.authorization.hive.authorizer.RangerHiveAuthorizerFactory</value>
+  <value>org.apache.hadoop.hive.ql.security.authorization.plugin.sqlstd.SQLStdConfOnlyAuthorizerFactory</value>
 </property>
 
 <!-- set to false in order not to create ZooKeeperClient in HiveServer2
@@ -355,29 +355,29 @@
 
 <property>
   <name>hive.metastore.db.type</name>
-  <value>MYSQL</value>
+  <value>Postgres</value>
 </property>
 
 <!-- set to com.mysql.jdbc.Driver if necessary -->
 <property>
   <name>javax.jdo.option.ConnectionDriverName</name>
-  <value>com.mysql.cj.jdbc.Driver</value>
+  <value>org.postgresql.Driver</value>
 </property>
 
 <property>
   <name>javax.jdo.option.ConnectionURL</name>
-  <value>jdbc:mysql://${hive.database.host}/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=false</value>
+  <value>jdbc:postgresql://${hive.database.host}/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=false</value>
   <!-- <value>jdbc:mysql://${hive.database.host}/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=true&amp;verifyServerCertificate=true</value> -->
 </property>
 
 <property>
   <name>javax.jdo.option.ConnectionUserName</name>
-  <value>root</value>
+  <value>user</value>
 </property>
 
 <property>
   <name>javax.jdo.option.ConnectionPassword</name>
-  <value>passwd</value>
+  <value>abc</value>
 </property>
 
 <property>
@@ -593,7 +593,8 @@
     
 <property>
   <name>hive.aux.jars.path</name>
-  <value></value>
+  postgresql-42.3.2.jar
+  <value>/opt/mr3-run/lib/postgresql-42.3.2.jar</value>
 </property>
 
 <!-- set to false when not using HDFS -->
@@ -645,7 +646,7 @@
 
 <property>
   <name>hive.mr3.map.task.memory.mb</name>
-  <value>6144</value>
+  <value>1024</value>
 </property>
 
 <property>
@@ -655,7 +656,7 @@
 
 <property>
   <name>hive.mr3.reduce.task.memory.mb</name>
-  <value>6144</value>
+  <value>1024</value>
 </property>
 
 <property>
@@ -665,17 +666,17 @@
 
 <property>
   <name>hive.mr3.all-in-one.containergroup.memory.mb</name>
-  <value>110592</value>
+  <value>2048</value>
 </property>
 
 <property>
   <name>hive.mr3.all-in-one.containergroup.vcores</name>
-  <value>18</value>
+  <value>2</value>
 </property>
 
 <property>
   <name>hive.mr3.use.daemon.shufflehandler</name>
-  <value>12</value>
+  <value>1</value>
   <description>
     Adjust tez.shuffle.max.threads in tez-site.xml (to a non-zero value) if necessary
   </description>
@@ -683,7 +684,7 @@
 
 <property>
   <name>hive.mr3.am.task.max.failed.attempts</name>
-  <value>3</value>
+  <value>2</value>
 </property>
 
 <property>
@@ -743,12 +744,12 @@
  -->
 <property>
   <name>hive.exec.scratchdir</name>
-  <value>/opt/mr3-run/work-dir/${user.name}</value>
+  <value>s3a://</value>
 </property>
 
 <property>
   <name>hive.query.results.cache.directory</name>
-  <value>/opt/mr3-run/work-dir/_resultscache_</value>
+  <value>s3a://</value>
 </property>
 
 <property>

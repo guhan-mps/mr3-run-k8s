@@ -1,3 +1,4 @@
+{{ if .Values.create.hive -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -133,3 +134,4 @@ spec:
       {{- end }}
       - name: hiveserver2-ranger-policy-k8s-volume
         emptyDir: {}
+{{ end }}
