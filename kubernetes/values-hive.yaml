@@ -26,8 +26,8 @@ create:
 hive:
   port: 9852
   httpport: 10001
-  scratchdir: s3a://blox-dev-use1-internal/hivemr3/workdir
-  cachedir: s3a://blox-dev-use1-internal/hivemr3/workdir/_resultscache_
+  scratchdir: s3a://
+  cachedir: s3a://
   resources:
     requests:
       cpu: 2
