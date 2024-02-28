@@ -41,6 +41,7 @@ create:
 metastore:
   # if create.metastore == true, this field will be ignored and 
   # replaced with hivemr3-metastore-0.metastore.{{namespace}}.svc.cluster.local
+  rolesCreate: true
   host: red0
   port: 9850
 
@@ -71,6 +72,7 @@ metastore:
   heapSize: 8192
 
 hive:
+  rolesCreate: true
   port: 9852
   httpport: 10001
   externalIp: 1.1.1.1
