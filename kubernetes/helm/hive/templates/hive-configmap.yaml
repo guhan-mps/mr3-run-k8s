@@ -996,12 +996,12 @@ data:
     -->
     <property>
       <name>hive.exec.scratchdir</name>
-      <value>s3a://</value>
+      <value>{{.Values.hive.scratchdir}}</value>
     </property>
 
     <property>
       <name>hive.query.results.cache.directory</name>
-      <value>s3a://</value>
+      <value>{{.Values.hive.cachedir}}</value>
     </property>
 
     <property>
