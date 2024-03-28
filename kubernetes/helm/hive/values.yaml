@@ -148,3 +148,11 @@ hostAliases:
   hostnames:
   - "red0"
 
+postgresql:
+  enabled: true
+  global:
+    postgresql:
+      auth:
+        username: user
+        password: abc
+        database: hive3mr3

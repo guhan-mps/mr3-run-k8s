@@ -7,7 +7,7 @@ name:
   persistentVolumeClaim: ""
 metastore:
   rolesCreate: false
-  databaseHost: postgres-rbac
+  databaseHost: hive-postgresql
   databaseName: hive3mr3
   warehouseDir: s3a://
   dbType: postgres
