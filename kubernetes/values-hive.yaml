@@ -46,3 +46,10 @@ docker:
 postgresql:
   postgresPassword: abc
   postgresUser: user
+  enabled: true
+  global:
+    postgresql:
+      auth:
+        username: user
+        password: abc
+        database: hive3mr3
