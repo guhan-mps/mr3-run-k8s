@@ -618,7 +618,7 @@ data:
 
     <property>
       <name>javax.jdo.option.ConnectionURL</name>
-      <value>jdbc:postgresql://${hive.database.host}/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=false</value>
+      <value>jdbc:postgresql://{{ .Release.Name }}-postgresql/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=false</value>
       <!-- <value>jdbc:mysql://${hive.database.host}/${hive.database.name}?createDatabaseIfNotExist=true&amp;useSSL=true&amp;verifyServerCertificate=true</value> -->
     </property>
 

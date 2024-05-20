@@ -92,7 +92,7 @@ WORKER_SECRET={{.Values.name.hive.workerSecret}}
 # HIVE_DATABASE_NAME = database name in Hive Metastore 
 # HIVE_WAREHOUSE_DIR = directory for the Hive warehouse 
 
-HIVE_DATABASE_HOST={{.Values.metastore.databaseHost}}
+HIVE_DATABASE_HOST={{ .Release.Name }}-postgresql
 
 # if an existing Metastore is used 
 # HIVE_METASTORE_HOST=red0
